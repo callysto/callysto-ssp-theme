@@ -127,7 +127,7 @@ if($onLoad !== '') {
 <div id="wrap">
 	
 	<div id="header">
-		<a href="/"><img height="15%" width="15%" src="<?php echo SimpleSAML\Module::getModuleURL('callysto/callysto.png'); ?>"/></a>
+		<a href="https://callysto.ca"><img height="15%" width="15%" src="<?php echo SimpleSAML\Module::getModuleURL('callysto/callysto.png'); ?>"/></a>
 		<h1><?php echo (isset($this->data['header']) ? $this->data['header'] : 'SimpleSAMLphp'); ?></h1>
 	</div>
 	
