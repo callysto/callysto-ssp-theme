@@ -1,0 +1,26 @@
+msgid "welcome"
+msgstr "Welcome to callysto"
+
+msgid "select_source_header"
+msgstr "How would you like to sign in? Please select an authentication source:"
+
+msgid "select_source_text"
+msgstr "The selected authentication source will be used to authenticate you and and to create a valid session."
+
+msgid "register_here_text"
+msgstr "Register <a href=\"https://docs.google.com/forms/d/e/1FAIpQLScmTBzEwULrJ0CqXqRoD8HrDGehn5Fh1Z4h31ovw7lOedyZbA/viewform">here</a> to be notified of any upcoming service changes, and maintenance and outage windows."
+
+msgid "having_trouble_text"
+msgstr "Having trouble logging in? Email Callysto’s technical support: support@callysto.ca."
+
+msgid "selectidp_title"
+msgstr "Please select your identity provider."
+
+msgid "selectidp_text"
+msgstr "Please select the identity provider you wish to use as your authentication source:"
+
+msgid "logout_title"
+msgstr "Thank you for using Callysto."
+
+msgid "logout_text"
+msgstr "You have completed the first step of logging out. Please close your web browser to complete the logout."
