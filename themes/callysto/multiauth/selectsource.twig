@@ -1,0 +1,33 @@
+{% set pagetitle = 'Welcome to Callysto'|trans %}
+{% extends "base.twig" %}
+
+{% block content %}
+    <h2>{{ 'select_source_header'|trans }}</h2>
+
+    <form>
+        <input type="hidden" name="AuthState" value="{{ authstate }}">
+        <ul class="idpselect">
+        {% for key, source in sources %}
+            {% set button = ('button-' ~ key) %}
+	    <li class="idpselect" class="{{ source.css_class|default('') }} authsource">
+              <button type="submit" name="sourceChoice[{{ key }}]"
+                {%- if key == preferred %}
+                    class="authsource" autofocus
+                {%- else %}
+                    class="authsource"
+                {% endif %}
+                id="{{ button }}" value="{{ source.text is defined ? source.text|translateFromArray : key }}">
+                <img src="/{{baseurlpath}}module.php/callysto/assets/{{key}}.png" class="idpselect" /><br/>
+                </button>
+              {% if source.help is defined %}
+                <p>{{ source.help|translateFromArray }}</p>
+              {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    </form>
+
+    <p class="register">{{ 'register_here_text'|trans|raw }}</p>
+    <p class="trouble">{{'having_trouble_text'|trans}}</p>
+
+{% endblock %}
