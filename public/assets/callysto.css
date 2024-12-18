@@ -11,14 +11,17 @@ body {
 
 button.authsource {
   border: 0; 
-  background: transparent;
   font-size: small;
 }
 
 ul {
   list-style-type: none;
   overflow: hidden;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+  padding: 20px;
 }
 
 li.authsource {
@@ -27,6 +30,33 @@ li.authsource {
   list-style-type: none;
   padding: 20px;
   vertical-align: bottom;
+}
+
+li.authsource input {
+  height: 200px;
+  width: 300px;
+  font-size: 0;
+  border: 1px solid grey;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+li.authsource p {
+  text-align: center;
+}
+
+input#button-microsoft {
+  background-image: url('/simplesaml/module.php/callysto/assets/microsoft.png');
+}
+
+input#button-google {
+  background-image: url('/simplesaml/module.php/callysto/assets/google.png');
+}
+
+input#button-mock-idp {
+  background-image: url('/simplesaml/module.php/callysto/assets/mock-idp.png');
 }
 
 p.register {
@@ -55,9 +85,21 @@ p.remember {
 
 #footer {
   color: #A9A9A9;
+  background: none;
+  text-align: left;
+  color: #000000;
 }
 
 #footer a {
   color: #A9A9A9;
+}
+
+#header {
+  height: 6rem;
+  background: none;
+}
+
+#header #logo img {
+  height: 6rem;
 }
 

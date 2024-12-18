@@ -1,24 +1,25 @@
-{% set pagetitle = 'Welcome to Callysto'|trans %}
+{% set pagetitle = 'Select an authentication source'|trans %}
 {% extends "base.twig" %}
 
 {% block content %}
-    <h2>{{ 'select_source_header'|trans }}</h2>
+    <h2>{{ 'Select an authentication source'|trans }}</h2>
+    <p>{{ 'The selected authentication source will be used to authenticate you and to create a valid session.'|trans }}</p>
 
     <form>
         <input type="hidden" name="AuthState" value="{{ authstate }}">
-        <ul class="idpselect">
+        <ul>
         {% for key, source in sources %}
             {% set button = ('button-' ~ key) %}
-	    <li class="idpselect" class="{{ source.css_class|default('') }} authsource">
-              <button type="submit" name="sourceChoice[{{ key }}]"
+	    <li class="{{ source.css_class|default('') }} authsource">
+              <input type="submit" name="sourceChoice[{{ key }}]"
                 {%- if key == preferred %}
-                    class="authsource" autofocus
+                    class="pure-button pure-button-active" autofocus
                 {%- else %}
-                    class="authsource"
+                    class="pure-button"
                 {% endif %}
                 id="{{ button }}" value="{{ source.text is defined ? source.text|translateFromArray : key }}">
-                <img src="/{{baseurlpath}}module.php/callysto/assets/{{key}}.png" class="idpselect" /><br/>
-                </button>
+              </input>
+              <p>{{ source.text is defined ? source.text|translateFromArray : key }}</p>
               {% if source.help is defined %}
                 <p>{{ source.help|translateFromArray }}</p>
               {% endif %}
@@ -26,8 +27,4 @@
         {% endfor %}
         </ul>
     </form>
-
-    <p class="register">{{ 'register_here_text'|trans|raw }}</p>
-    <p class="trouble">{{'having_trouble_text'|trans}}</p>
-
 {% endblock %}
